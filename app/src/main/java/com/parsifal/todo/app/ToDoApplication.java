@@ -1,4 +1,4 @@
-package com.parsifal.todo;
+package com.parsifal.todo.app;
 
 import android.app.Application;
 
