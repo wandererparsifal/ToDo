@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:padding="20dp">
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/title"
+        android:textCursorDrawable="@drawable/color_cursor"
+        app:met_baseColor="@color/colorAccent"
+        app:met_floatingLabel="highlight"
+        app:met_floatingLabelAlwaysShown="false"
+        app:met_floatingLabelAnimating="true"
+        app:met_floatingLabelText="@string/title"
+        app:met_floatingLabelTextColor="@color/colorHotPink"
+        app:met_primaryColor="@color/colorAccent"
+        app:met_textColor="@color/colorDarkPurple"
+        app:met_textColorHint="@color/colorHotPink"
+        app:met_validateOnFocusLost="true"
+        />
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/content"
+        android:textCursorDrawable="@drawable/color_cursor"
+        app:met_baseColor="@color/colorAccent"
+        app:met_floatingLabel="highlight"
+        app:met_floatingLabelAlwaysShown="false"
+        app:met_floatingLabelAnimating="true"
+        app:met_floatingLabelText="@string/content"
+        app:met_floatingLabelTextColor="@color/colorHotPink"
+        app:met_primaryColor="@color/colorAccent"
+        app:met_textColor="@color/colorDarkPurple"
+        app:met_textColorHint="@color/colorHotPink"
+        app:met_validateOnFocusLost="true"
+        />
+</LinearLayout>
