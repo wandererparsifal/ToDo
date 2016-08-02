@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+        android:viewportWidth="18"
+        android:viewportHeight="15"
+        android:width="18dp"
+        android:height="15dp">
+    <group android:name="done" android:translateY="0.5" android:translateX="0.0">
+        <path android:pathData="M6,10.2 L1.8,6 L0.4,7.4 L6,13 L18,1 L16.6,-0.4 L6,10.2 Z"
+              android:name="Shape" android:fillColor="#ffffff"/>
+    </group>
+</vector>
