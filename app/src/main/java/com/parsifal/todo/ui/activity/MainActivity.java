@@ -5,7 +5,6 @@ import android.graphics.drawable.AnimatedVectorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -41,14 +40,12 @@ public class MainActivity extends AppCompatActivity {
                     final AnimatedVectorDrawable vectorDrawable = (AnimatedVectorDrawable) drawable;
                     vectorDrawable.start();
                     drawer.closeDrawer(GravityCompat.START);
-                    Log.e("drawer", "closeDrawer");
                 } else {
                     toolbar.setNavigationIcon(R.drawable.ic_anim_menu);
                     Drawable drawable = toolbar.getNavigationIcon();
                     final AnimatedVectorDrawable vectorDrawable = (AnimatedVectorDrawable) drawable;
                     vectorDrawable.start();
                     drawer.openDrawer(GravityCompat.START);
-                    Log.e("drawer", "openDrawer");
                 }
             }
         });
@@ -80,7 +77,19 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onDrawerStateChanged(int newState) {
-
+                if (DrawerLayout.STATE_DRAGGING == newState) {
+                    if (drawer.isDrawerOpen(GravityCompat.START)) {
+                        toolbar.setNavigationIcon(R.drawable.ic_anim_back);
+                        Drawable drawable = toolbar.getNavigationIcon();
+                        final AnimatedVectorDrawable vectorDrawable = (AnimatedVectorDrawable) drawable;
+                        vectorDrawable.start();
+                    } else {
+                        toolbar.setNavigationIcon(R.drawable.ic_anim_menu);
+                        Drawable drawable = toolbar.getNavigationIcon();
+                        final AnimatedVectorDrawable vectorDrawable = (AnimatedVectorDrawable) drawable;
+                        vectorDrawable.start();
+                    }
+                }
             }
         });
 
