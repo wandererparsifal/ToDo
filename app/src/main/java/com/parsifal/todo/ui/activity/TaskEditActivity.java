@@ -24,7 +24,7 @@ public class TaskEditActivity extends AppCompatActivity {
         toolbar = (Toolbar) findViewById(R.id.toolbar_task_edit);
         setSupportActionBar(toolbar);
 
-        toolbar.setNavigationIcon(R.drawable.vector_drawable_arrow_back);
+        toolbar.setNavigationIcon(R.drawable.vector_drawable_back);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

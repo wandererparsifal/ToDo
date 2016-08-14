@@ -1,8 +1,11 @@
 package com.parsifal.todo.ui.activity;
 
 import android.content.Intent;
+import android.graphics.drawable.AnimatedVectorDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -25,16 +28,27 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.app_bar_main);
+
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        toolbar.setNavigationIcon(R.drawable.vector_drawable_menu);
+        toolbar.setNavigationIcon(R.drawable.ic_anim_menu);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (drawer.isDrawerOpen(GravityCompat.START)) {
+                    toolbar.setNavigationIcon(R.drawable.ic_anim_back);
+                    Drawable drawable = toolbar.getNavigationIcon();
+                    final AnimatedVectorDrawable vectorDrawable = (AnimatedVectorDrawable) drawable;
+                    vectorDrawable.start();
                     drawer.closeDrawer(GravityCompat.START);
+                    Log.e("drawer", "closeDrawer");
                 } else {
+                    toolbar.setNavigationIcon(R.drawable.ic_anim_menu);
+                    Drawable drawable = toolbar.getNavigationIcon();
+                    final AnimatedVectorDrawable vectorDrawable = (AnimatedVectorDrawable) drawable;
+                    vectorDrawable.start();
                     drawer.openDrawer(GravityCompat.START);
+                    Log.e("drawer", "openDrawer");
                 }
             }
         });
@@ -57,13 +71,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onDrawerOpened(View drawerView) {
                 toolbar.setTitle("Close");
-                toolbar.setNavigationIcon(R.drawable.vector_drawable_arrow_back);
             }
 
             @Override
             public void onDrawerClosed(View drawerView) {
                 toolbar.setTitle("Open");
-                toolbar.setNavigationIcon(R.drawable.vector_drawable_menu);
             }
 
             @Override

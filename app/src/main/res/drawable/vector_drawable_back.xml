@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
-        android:width="18dp"
+        android:width="16dp"
         android:height="16dp"
         android:viewportHeight="16"
-        android:viewportWidth="18">
+        android:viewportWidth="16">
     <group
-        android:name="menu"
+        android:name="arrow-back"
         android:translateX="0.0"
         android:translateY="0.0">
         <path
             android:name="Shape"
             android:fillColor="#ffffff"
             android:pathData="
-					M 0.0,0.0  L 0.0,2.0   L 18.0,2.0  L 18.0,0.0 L 0.0,0.0
-                	M 0.0,6.0  L 0.0,7.0   L 18.0,7.0  L 18.0,5.0 L 0.0,5.0  L 0.0,6.0
-                	M 0.0,12.0 L 18.0,12.0 L 18.0,10.0 L 0.0,10.0 L 0.0,12.0"
-            />
+            M 0.0,8.0 L 3.8,7.0  L 9.4,1.4  L 8.0,0.0  L 0.0,8.0
+		    M 0.0,8.0 L 3.8,9.0  L 16.0,9.0 L 16.0,7.0 L 3.8,7.0 L 0.0,8.0
+		    M 0.0,8.0 L 8.0,16.0 L 9.4,14.6 L 3.8,9.0  L 0.0,8.0"/>
     </group>
 </vector>
