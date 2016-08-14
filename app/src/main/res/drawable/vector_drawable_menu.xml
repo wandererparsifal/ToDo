@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
         android:width="18dp"
-        android:height="16dp"
-        android:viewportHeight="16"
+        android:height="18dp"
+        android:viewportHeight="18"
         android:viewportWidth="18">
     <group
         android:name="menu"
@@ -12,9 +12,9 @@
             android:name="Shape"
             android:fillColor="#ffffff"
             android:pathData="
-					M 0.0,0.0  L 0.0,2.0   L 18.0,2.0  L 18.0,0.0 L 0.0,0.0
-                	M 0.0,6.0  L 0.0,7.0   L 18.0,7.0  L 18.0,5.0 L 0.0,5.0  L 0.0,6.0
-                	M 0.0,12.0 L 18.0,12.0 L 18.0,10.0 L 0.0,10.0 L 0.0,12.0"
+					M 0.0,1.0  L 0.0,3.0   L 18.0,3.0  L 18.0,1.0 L 0.0,1.0
+                	M 0.0,7.0  L 0.0,8.0   L 18.0,8.0  L 18.0,6.0 L 0.0,6.0  L 0.0,7.0
+                	M 0.0,13.0 L 18.0,13.0 L 18.0,11.0 L 0.0,11.0 L 0.0,13.0"
             />
     </group>
 </vector>
