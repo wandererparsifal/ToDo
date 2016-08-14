@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    >
+    android:orientation="vertical">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -15,12 +13,12 @@
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar_task_edit"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            />
+            android:layout_height="?attr/actionBarSize" />
 
     </android.support.design.widget.AppBarLayout>
 
     <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/edit_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
@@ -37,10 +35,10 @@
         app:met_primaryColor="@color/colorAccent"
         app:met_textColor="@color/colorDarkPurple"
         app:met_textColorHint="@color/colorHotPink"
-        app:met_validateOnFocusLost="true"
-        />
+        app:met_validateOnFocusLost="true" />
 
     <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/edit_content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
@@ -56,6 +54,5 @@
         app:met_primaryColor="@color/colorAccent"
         app:met_textColor="@color/colorDarkPurple"
         app:met_textColorHint="@color/colorHotPink"
-        app:met_validateOnFocusLost="true"
-        />
+        app:met_validateOnFocusLost="true" />
 </LinearLayout>
