@@ -3,6 +3,7 @@ package com.parsifal.todo.ui.activity;
 import android.content.Intent;
 import android.graphics.drawable.AnimatedVectorDrawable;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.view.View;
@@ -30,21 +31,33 @@ public class MainActivity extends AppCompatActivity {
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        toolbar.setNavigationIcon(R.drawable.ic_anim_menu);
+        if (Build.VERSION.SDK_INT >= 23) {
+            toolbar.setNavigationIcon(R.drawable.ic_anim_menu);
+        } else {
+            toolbar.setNavigationIcon(R.drawable.vector_drawable_menu);
+        }
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (drawer.isDrawerOpen(GravityCompat.START)) {
-                    toolbar.setNavigationIcon(R.drawable.ic_anim_back);
-                    Drawable drawable = toolbar.getNavigationIcon();
-                    final AnimatedVectorDrawable vectorDrawable = (AnimatedVectorDrawable) drawable;
-                    vectorDrawable.start();
+                    if (Build.VERSION.SDK_INT >= 23) {
+                        toolbar.setNavigationIcon(R.drawable.ic_anim_back);
+                        Drawable drawable = toolbar.getNavigationIcon();
+                        final AnimatedVectorDrawable vectorDrawable = (AnimatedVectorDrawable) drawable;
+                        vectorDrawable.start();
+                    } else {
+                        toolbar.setNavigationIcon(R.drawable.vector_drawable_back);
+                    }
                     drawer.closeDrawer(GravityCompat.START);
                 } else {
-                    toolbar.setNavigationIcon(R.drawable.ic_anim_menu);
-                    Drawable drawable = toolbar.getNavigationIcon();
-                    final AnimatedVectorDrawable vectorDrawable = (AnimatedVectorDrawable) drawable;
-                    vectorDrawable.start();
+                    if (Build.VERSION.SDK_INT >= 23) {
+                        toolbar.setNavigationIcon(R.drawable.ic_anim_menu);
+                        Drawable drawable = toolbar.getNavigationIcon();
+                        final AnimatedVectorDrawable vectorDrawable = (AnimatedVectorDrawable) drawable;
+                        vectorDrawable.start();
+                    } else {
+                        toolbar.setNavigationIcon(R.drawable.vector_drawable_menu);
+                    }
                     drawer.openDrawer(GravityCompat.START);
                 }
             }
@@ -79,15 +92,23 @@ public class MainActivity extends AppCompatActivity {
             public void onDrawerStateChanged(int newState) {
                 if (DrawerLayout.STATE_DRAGGING == newState) {
                     if (drawer.isDrawerOpen(GravityCompat.START)) {
-                        toolbar.setNavigationIcon(R.drawable.ic_anim_back);
-                        Drawable drawable = toolbar.getNavigationIcon();
-                        final AnimatedVectorDrawable vectorDrawable = (AnimatedVectorDrawable) drawable;
-                        vectorDrawable.start();
+                        if (Build.VERSION.SDK_INT >= 23) {
+                            toolbar.setNavigationIcon(R.drawable.ic_anim_back);
+                            Drawable drawable = toolbar.getNavigationIcon();
+                            final AnimatedVectorDrawable vectorDrawable = (AnimatedVectorDrawable) drawable;
+                            vectorDrawable.start();
+                        } else {
+                            toolbar.setNavigationIcon(R.drawable.vector_drawable_back);
+                        }
                     } else {
-                        toolbar.setNavigationIcon(R.drawable.ic_anim_menu);
-                        Drawable drawable = toolbar.getNavigationIcon();
-                        final AnimatedVectorDrawable vectorDrawable = (AnimatedVectorDrawable) drawable;
-                        vectorDrawable.start();
+                        if (Build.VERSION.SDK_INT >= 23) {
+                            toolbar.setNavigationIcon(R.drawable.ic_anim_menu);
+                            Drawable drawable = toolbar.getNavigationIcon();
+                            final AnimatedVectorDrawable vectorDrawable = (AnimatedVectorDrawable) drawable;
+                            vectorDrawable.start();
+                        } else {
+                            toolbar.setNavigationIcon(R.drawable.vector_drawable_menu);
+                        }
                     }
                 }
             }

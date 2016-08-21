@@ -2,6 +2,7 @@ package com.parsifal.todo.ui.activity;
 
 import android.graphics.drawable.AnimatedVectorDrawable;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -96,9 +97,11 @@ public class TaskEditActivity extends AppCompatActivity {
     public boolean onPrepareOptionsMenu(Menu menu) {
         if (isTitleExist) {
             menu.findItem(R.id.action_edit_done).setVisible(true);
-            Drawable drawable = menu.findItem(R.id.action_edit_done).getIcon();
-            final AnimatedVectorDrawable vectorDrawable = (android.graphics.drawable.AnimatedVectorDrawable) drawable;
-            vectorDrawable.start();
+            if (Build.VERSION.SDK_INT >= 23) {
+                Drawable drawable = menu.findItem(R.id.action_edit_done).getIcon();
+                final AnimatedVectorDrawable vectorDrawable = (android.graphics.drawable.AnimatedVectorDrawable) drawable;
+                vectorDrawable.start();
+            }
         } else {
             menu.findItem(R.id.action_edit_done).setVisible(false);
         }
